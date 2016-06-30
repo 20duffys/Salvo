@@ -28,15 +28,6 @@ for (i = 0; i < cols; i++) {
 	}
 }
 
-/* lazy way of tracking when the game is won: just increment hitCount on every hit
-   in this version, and according to the official Hasbro rules (http://www.hasbro.com/common/instruct/BattleShip_(2002).PDF)
-   there are 17 hits to be made in order to win the game:
-      Carrier     - 5 hits
-      Battleship  - 4 hits
-      Destroyer   - 3 hits
-      Submarine   - 3 hits
-      Patrol Boat - 2 hits
-*/
 var hitCount = 0;
 
 /* create the 2d array that will contain the status of each square on the board
