@@ -1,87 +1,109 @@
-console.log("Game Start")
 
-var rows = 10;
-var cols = 10;
-var squareSize = 50;
+document.addEventListener('DOMContentLoaded', function() {
+var heading1 = document.createElement('h2')
+console.log(heading1)
 
-// get the container element
-var gameBoardContainer = document.getElementById("gameboard");
-
-// make the grid columns and rows
-for (i = 0; i < cols; i++) {
-	for (j = 0; j < rows; j++) {
-
-		// create a new div HTML element for each grid square and make it the right size
-		var square = document.createElement("div");
-		gameBoardContainer.appendChild(square);
-
-    // give each div element a unique id based on its row and column, like "s00"
-		square.id = 's' + j + i;
-
-		// set each grid square's coordinates: multiples of the current row or column number
-		var topPosition = j * squareSize;
-		var leftPosition = i * squareSize;
-
-		// use CSS absolute positioning to place each grid square on the page
-		square.style.top = topPosition + 'px';
-		square.style.left = leftPosition + 'px';
-	}
+var table1 = document.createElement("table");
+for (var i = 1; i < 8; i++) {
+   var tr = document.createElement('tr');
+   for (var j = 1; j < 8; j++) {
+       var td = document.createElement('td');
+       if (i%2 == j%2) {
+           td.className = "white";
+       } else {
+           td.className = "blue";
+       }
+       tr.appendChild(td);
+       td.id = 's' + i + j;
+       table1.id = "A"
+   }
+   table1.appendChild(tr);
 }
+document.body.appendChild(table1);
+});
+//
+// document.addEventListener('DOMContentLoaded', function() {
+//   var title1 = document.createElement('h1');
+//   title1.innerText("Pirate Sam!")
+// }
+//   document.body.appendChild(title1);
+// };
 
-var hitCount = 0;
 
-/* create the 2d array that will contain the status of each square on the board
-   and place ships on the board (later, create function for random placement!)
-   0 = empty, 1 = part of a ship, 2 = a sunken part of a ship, 3 = a missed shot
-*/
-var gameBoard = [
-				[0,0,0,1,1,1,1,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,1,0,0,0],
-				[0,0,0,0,0,0,1,0,0,0],
-				[1,0,0,0,0,0,1,1,1,1],
-				[1,0,0,0,0,0,0,0,0,0],
-				[1,0,0,1,0,0,0,0,0,0],
-				[1,0,0,1,0,0,0,0,0,0],
-				[1,0,0,0,0,0,0,0,0,0]
-				]
-
-// set event listener for all elements in gameboard, run fireTorpedo function when square is clicked
-gameBoardContainer.addEventListener("click", fireTorpedo, false);
-
-// initial code via http://www.kirupa.com/html5/handling_events_for_many_elements.htm:
-function fireTorpedo(e) {
-    // if item clicked (e.target) is not the parent element on which the event listener was set (e.currentTarget)
-	if (e.target !== e.currentTarget) {
-        // extract row and column # from the HTML element's id
-		var row = e.target.id.substring(1,2);
-		var col = e.target.id.substring(2,3);
-        //alert("Clicked on row " + row + ", col " + col);
-
-		// if player clicks a square with no ship, change the color and change square's value
-		if (gameBoard[row][col] == 0) {
-			e.target.style.background = '#bbb';
-			// set this square's value to 3 to indicate that they fired and missed
-			gameBoard[row][col] = 3;
-
-		// if player clicks a square with a ship, change the color and change square's value
-		} else if (gameBoard[row][col] == 1) {
-			e.target.style.background = 'red';
-			// set this square's value to 2 to indicate the ship has been hit
-			gameBoard[row][col] = 2;
-
-			// increment hitCount each time a ship is hit
-			hitCount++;
-			// this definitely shouldn't be hard-coded, but here it is anyway. lazy, simple solution:
-			if (hitCount == 17) {
-				alert("All enemy battleships have been defeated! You win!");
-			}
-
-		// if player clicks a square that's been previously hit, let them know
-		} else if (gameBoard[row][col] > 1) {
-			alert("Stop wasting your torpedos! You already fired at this location.");
-		}
-    }
-    e.stopPropagation();
+document.addEventListener('DOMContentLoaded', function() {
+var table2 = document.createElement("table");
+for (var i = 1; i < 8; i++) {
+   var tr = document.createElement('tr');
+   for (var j = 1; j < 8; j++) {
+       var td = document.createElement('td');
+       if (i%2 == j%2) {
+           td.className = "white";
+       } else {
+           td.className = "blue";
+       }
+       tr.appendChild(td);
+       td.id = 'q' + i + j;
+       table2.id = "B"
+   }
+   table2.appendChild(tr);
 }
+document.body.appendChild(table2);
+});
+
+
+var rowIndex = [];
+var colIndex = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+  for (var q = 1; q < 8; q++) {
+    rowIndex.push("s1"+[q]);
+    var rowIndexkeys = document.createElement('p');
+  } for (var w = 1; w < 8; w++) {
+    colIndex.push("s" + [w] + "1");
+    var colIndexkeys = document.createElement('p');
+  }
+  console.log(rowIndex);
+  console.log(colIndex);
+  for (var r = 0; r < 7; r++) {
+    console.log(rowIndex[r]);
+    console.log(colIndex[r]);
+  }
+});
+
+
+
+// var hitmark = false;
+//
+//
+// function fireTorpedo(e) {
+//
+// 	if (e.target !== e.currentTarget) {
+//
+// 		var row = e.target.id.substring(1,2);
+// 		var col = e.target.id.substring(2,3);
+//
+//
+// 		if (gameBoard_1[row][col] == 0) {
+// 			e.target.style.background = '#bbb';
+//
+// 			gameBoard_1[row][col] = 3;
+//
+//
+// 			e.target.style.background = 'red';
+//
+// 			gameBoard_1[row][col] = 2;
+//
+//
+// 			hitCount++;
+//
+// 			if (hitCount == 17) {
+// 				alert("All enemy battleships have been defeated! You win!");
+// 			}
+//
+//
+// 		} else if (gameBoard_1[row][col] > 1) {
+// 			alert("Stop wasting your torpedos! You already fired at this location.");
+// 		}
+//     }
+//     e.stopPropagation();
+// }
