@@ -15,6 +15,6 @@ I am also going to make a trivia game using Hamlet as the primary source materia
 
 ##How it works
 
-For the battleship game,
+For the battleship game, I am going to create a ten by ten grid using javascript and also set up individual
 
 ###Technology Used
