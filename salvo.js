@@ -135,6 +135,7 @@ function switchColor() {
       return function() {
         i.style.backgroundColor= "#ff0000";
         alert("Ducky Alpha has taken a hit!")
+
         }
       }
       else if (i.classList.contains("hiddenB")) {
