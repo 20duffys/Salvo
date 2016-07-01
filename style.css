@@ -1,15 +1,19 @@
 img {
   position: relative;
 }
-.white {
+/*.white {
  background-color: #BED9D2 ;
 }
 .blue {
  background-color: RGB(114, 197, 247) ;
+}*/
+
+td {
+   background-color: RGB(114, 197, 247); 
 }
 
 h1 {
-  
+
 }
 
 table {
