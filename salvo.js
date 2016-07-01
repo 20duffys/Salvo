@@ -1,6 +1,8 @@
+console.log("Game Start!");
 
-var heading1 = document.createElement('h2')
-console.log(heading1)
+var heading1 = document.createElement('h2');
+  heading1.innerHTMl ="The Dread Pirate Sam";
+  document.body.appendChild(heading1);
 
 var table1 = document.createElement("table");
 for (var i = 1; i < 8; i++) {
@@ -35,11 +37,11 @@ for (var i = 1; i < 8; i++) {
    var tr = document.createElement('tr');
    for (var j = 1; j < 8; j++) {
        var td = document.createElement('td');
-       if (i%2 == j%2) {
-           td.className = "white";
-       } else {
-           td.className = "blue";
-       }
+      //  if (i%2 == j%2) {
+      //      td.className = "white";
+      //  } else {
+      //      td.className = "blue";
+      //  }
        tr.appendChild(td);
        td.id = 'q' + i + j;
        table2.id = "B"
@@ -101,15 +103,44 @@ function switchColor() {
     }
 
 
-    var RubberDucky = document.getElementById("s21");
-    RubberDucky.classList = "hidden";
-    console.log(RubberDucky);
+
 
     function changeColor(i) {
-      console.log(i.classList.contains("hidden"));
-      if (i.classList.contains("hidden")) {
+      var RubberDuckySternA = document.getElementById("s21");
+      RubberDuckySternA.classList = "hiddenA";
+      console.log(RubberDuckySternA);
+
+      var RubberDuckyMidA = document.getElementById("s22");
+      RubberDuckyMidA.classList = "hiddenA";
+      console.log(RubberDuckyMidA);
+
+      var RubberDuckyBowA = document.getElementById("s23");
+      RubberDuckyBowA.classList = "hiddenA";
+      console.log(RubberDuckyBowA);
+
+      var RubberDuckySternB = document.getElementById("q35");
+      RubberDuckySternB.classList = "hiddenB";
+      console.log(RubberDuckySternB);
+
+      var RubberDuckyMidB = document.getElementById("q45");
+      RubberDuckyMidB.classList = "hiddenB";
+      console.log(RubberDuckyMidB);
+
+      var RubberDuckyBowB = document.getElementById("q55");
+      RubberDuckyBowB.classList = "hiddenB";
+      console.log(RubberDuckyBowB);
+
+      console.log(i.classList.contains("hiddenA"));
+      if (i.classList.contains("hiddenA")) {
       return function() {
         i.style.backgroundColor= "#ff0000";
+        alert("Ducky Alpha has taken a hit!")
+        }
+      }
+      else if (i.classList.contains("hiddenB")) {
+        return function() {
+        i.style.backgroundColor= "#ff0000";
+        alert("Ducky Beta has taken a hit!")
       }
     }
     else {
