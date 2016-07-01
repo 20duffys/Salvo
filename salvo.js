@@ -130,23 +130,52 @@ function switchColor() {
       RubberDuckyBowB.classList = "hiddenB";
       console.log(RubberDuckyBowB);
 
+
+
+      var BabyDuckySternA = document.getElementById("s51");
+      BabyDuckySternA.classList = "hiddenA";
+      console.log(BabyDuckySternA);
+
+      var BabyDuckyMidA = document.getElementById("s52");
+      BabyDuckyMidA.classList = "hiddenA";
+      console.log(BabyDuckyMidA);
+
+      var BabyDuckyBowA = document.getElementById("s53");
+      BabyDuckyBowA.classList = "hiddenA";
+      console.log(BabyDuckyBowA);
+
+      var BabyDuckySternB = document.getElementById("q25");
+      BabyDuckySternB.classList = "hiddenB";
+      console.log(BabyDuckySternB);
+
+      var BabyDuckyMidB = document.getElementById("q26");
+      BabyDuckyMidB.classList = "hiddenB";
+      console.log(BabyDuckyMidB);
+
+      var BabyDuckyBowB = document.getElementById("q27");
+      BabyDuckyBowB.classList = "hiddenB";
+      console.log(BabyDuckyBowB);
+
       console.log(i.classList.contains("hiddenA"));
       if (i.classList.contains("hiddenA")) {
       return function() {
         i.style.backgroundColor= "#ff0000";
-        alert("Ducky Alpha has taken a hit!")
-
+        alert("Ducky Alpha has taken a hit!");
+        alert("switch player");
         }
       }
       else if (i.classList.contains("hiddenB")) {
         return function() {
         i.style.backgroundColor= "#ff0000";
-        alert("Ducky Beta has taken a hit!")
+        alert("Ducky Beta has taken a hit!");
+        alert("switch player");
       }
     }
     else {
         return function() {
         i.style.backgroundColor= "#669999";
+        alert("Miss!");
+        alert("switch player");
       }
       }
     }
