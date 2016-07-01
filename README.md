@@ -40,3 +40,6 @@ In order to make the 'td' elements change color, I created the function switchCo
 ##Unresolved Problems
   While I had hopped to make both the Battleship and trivia games, I had an extremely difficult time making a grid which was clickable without becoming DRY or time consuming. I spent too much time, reviewing other source materials rather than making several tests then rebuilding. Ironically, the multitude of source material was more confusing than helpful at time.
   However, this version is only 1.0. :-) I need to find a way to make an alert when one player's ship has been destroyed. I also need to find a way to log that victory in an array and display the number of wins or loses for each player, Alpha and Beta. I will also find a less DRY way to make several game ships rather than listing each piece individually. I also wanted to make a game axis which listed the number and letter of the coordinate. There is much room for improvement; however, I know that I will make the necessary changes.
+
+##Link:
+https://20duffys.github.io/Salvo/
